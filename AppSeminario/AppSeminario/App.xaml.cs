@@ -1,32 +1,33 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using AppSeminario.Services;
 using AppSeminario.Views;
+using Prism.Unity;
+using Prism.Ioc;
+using Prism;
+using Acr.UserDialogs;
 
 namespace AppSeminario
 {
-    public partial class App : Application
+    public partial class App : PrismApplication
     {
-
-        public App()
+        public App() : this(null) { }
+        public App(IPlatformInitializer initializer = null) : base(initializer) { }
+        protected override async void OnInitialized()
         {
             InitializeComponent();
-
-            DependencyService.Register<MockDataStore>();
-            MainPage = new MainPage();
+            await NavigationService.NavigateAsync("NavigationPage/PaginaPrincipalPage");
         }
 
-        protected override void OnStart()
+        protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-        }
+            containerRegistry.RegisterInstance<IUserDialogs>(UserDialogs.Instance);
 
-        protected override void OnSleep()
-        {
-        }
-
-        protected override void OnResume()
-        {
+            containerRegistry.RegisterForNavigation<NavigationPage>();
+            
+            containerRegistry.RegisterForNavigation<PaginaPrincipalPage, PaginaPrincipalPageViewModel>();
+            containerRegistry.RegisterForNavigation<FotoPage, FotoPageViewModel>();
+            containerRegistry.RegisterForNavigation<VideoPage, VideoPageViewModel>();
         }
     }
 }

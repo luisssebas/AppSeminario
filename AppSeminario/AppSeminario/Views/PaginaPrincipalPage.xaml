@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+    prism:ViewModelLocator.AutowireViewModel="True"
+    x:Class="AppSeminario.Views.PaginaPrincipalPage">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" WidthRequest="200">
+            <Button Text="Fotos y Videos" Command="{Binding NavegarFotoCmd}"/>
+            <Button Text="Web Services" Command="{Binding NavegarWebCmd}"/>
+            <Button Text="Geolocalización" Command="{Binding NavegarMapaCmd}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+    prism:ViewModelLocator.AutowireViewModel="True"
+    xmlns:behaviors="clr-namespace:Xamarin.Forms.BehaviorsPack;assembly=Xamarin.Forms.BehaviorsPack"
+    x:Class="AppSeminario.Views.FotoPage">
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            <Button Text="Tomar Foto" Command="{Binding TomarFotoCmd}"/>
+            <Image Source="{Binding RutaImagen}"/>
+            <Button Text="Tomar Video" Command="{Binding TomarVideoCmd}"/>
+            <ListView
+                Margin="0,10,0,0"
+                HasUnevenRows="True"
+                ItemsSource="{Binding ListaVideos}">
+                <ListView.Behaviors>
+                    <behaviors:SelectedItemBehavior Command="{Binding VideoSeleccionadoCmd}" />
+                </ListView.Behaviors>
+                <ListView.Header>
+                    <Label Text="Lista de Videos" TextColor="Blue" FontSize="20"/>
+                </ListView.Header>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="10">
+                                <Label
+                                    TextColor="Blue"
+                                    FontSize="20"
+                                    Text="{Binding Titulo}"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
