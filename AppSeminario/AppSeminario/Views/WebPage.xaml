@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="AppSeminario.Views.WebPage">
+    <ContentPage.Content>
+        <StackLayout Padding="10">
+            <Button Text="Consumir Servicio Imagen" Command="{Binding ObtenerImagenesCmd}"/>
+            <Image Source="{Binding Imagen}"/>
+            <!--<Button Text="Consumir Servicio" Command="{Binding ObtenerDatosCmd}"/>
+            <ListView
+                Margin="0,10,0,0"
+                HasUnevenRows="True"
+                SelectionMode="None"
+                ItemsSource="{Binding Productos}">
+                <ListView.Header>
+                    <Label Text="Lista de Datos" TextColor="Blue" FontSize="20" />
+                </ListView.Header>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="10">
+                                <Label
+                                    TextColor="Blue"
+                                    FontSize="20"
+                                    Text="{Binding Servicio.Nombre}"/>
+                                <Label
+                                    TextColor="Black"
+                                    FontSize="20"
+                                    Text="{Binding Nombre}"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>-->
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

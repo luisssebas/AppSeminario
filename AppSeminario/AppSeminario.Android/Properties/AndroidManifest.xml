@@ -10,7 +10,7 @@
 	<uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 	<uses-feature android:name="android.hardware.camera" />
 	<uses-feature android:name="android.hardware.camera.autofocus" />
-	<application android:label="AppSeminario.Android">
+	<application android:label="AppSeminario.Android" android:usesCleartextTraffic="true">
     <provider android:name="android.support.v4.content.FileProvider" android:authorities="com.companyname.appseminario.fileprovider" android:exported="false" android:grantUriPermissions="true">
 			<meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/file_paths"></meta-data>
 		</provider>

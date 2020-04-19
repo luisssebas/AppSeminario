@@ -28,6 +28,7 @@ namespace AppSeminario
             containerRegistry.RegisterForNavigation<PaginaPrincipalPage, PaginaPrincipalPageViewModel>();
             containerRegistry.RegisterForNavigation<FotoPage, FotoPageViewModel>();
             containerRegistry.RegisterForNavigation<VideoPage, VideoPageViewModel>();
+            containerRegistry.RegisterForNavigation<WebPage, WebPageViewModel>();
         }
     }
 }
