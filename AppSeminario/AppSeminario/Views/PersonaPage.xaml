@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="AppSeminario.Views.PersonaPage">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <StackLayout Padding="20">
+                <ListView
+                    Margin="0,10,0,0"
+                    HasUnevenRows="True"
+                    ItemsSource="{Binding Personas}">
+                    <ListView.Header>
+                        <Label Text="Lista de Personas" TextColor="Blue" FontSize="20"/>
+                    </ListView.Header>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Padding="10">
+                                    <Label
+                                    FontSize="16"
+                                    Text="{Binding Nombre}"/>
+                                    <Label
+                                    FontSize="16"
+                                    Text="{Binding Identificacion}"/>
+                                    <Label
+                                    FontSize="16"
+                                    Text="{Binding Carrera}"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+            <Button 
+                Margin="30"
+                Grid.Row="0" 
+                VerticalOptions="EndAndExpand" 
+                HorizontalOptions="EndAndExpand"
+                CornerRadius="65"
+                HeightRequest="65"
+                WidthRequest="65"
+                Text="+"
+                FontSize="25"
+                Opacity="0.8"
+                BorderColor="Gray"
+                BorderWidth="1"
+                BackgroundColor="#EFEFEF"
+                TextColor="#233979"
+                Command="{Binding AgregarPersonaCmd}"/>
+        </Grid>
+        
+    </ContentPage.Content>
+</ContentPage>

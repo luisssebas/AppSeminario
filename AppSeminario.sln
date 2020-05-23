@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppSeminario.Android", "App
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppSeminario.iOS", "AppSeminario\AppSeminario.iOS\AppSeminario.iOS.csproj", "{3DDCC2CF-6A4D-44F8-A200-6B478DE46E0E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppSeminario", "AppSeminario\AppSeminario\AppSeminario.csproj", "{E5CBC24F-4AF0-44FD-84D5-D8446425D065}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppSeminario", "AppSeminario\AppSeminario\AppSeminario.csproj", "{E5CBC24F-4AF0-44FD-84D5-D8446425D065}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

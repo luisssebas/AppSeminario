@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="AppSeminario.Views.PersonaDataPage">
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            <Label Text="Nombre"/>
+            <Entry Text="{Binding Persona.Nombre}"/>
+            <Label Text="Identificación"/>
+            <Entry Text="{Binding Persona.Identificacion}"/>
+            <Label Text="Ciudad"/>
+            <Entry Text="{Binding Persona.Ciudad}"/>
+            <Label Text="Telefono"/>
+            <Entry Text="{Binding Persona.Telefono}"/>
+            <Label Text="Carrera"/>
+            <Entry Text="{Binding Persona.Telefono}"/>
+            <Button Text="GuardarPersona" Margin="0,10,0,0" Command="{Binding AgregarPersonaCmd}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

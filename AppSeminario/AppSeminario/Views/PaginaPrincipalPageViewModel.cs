@@ -15,6 +15,7 @@ namespace AppSeminario.Views
         public DelegateCommand NavegarFotoCmd { get; set; }
         public DelegateCommand NavegarWebCmd { get; set; }
         public DelegateCommand NavegarMapaCmd { get; set; }
+        public DelegateCommand NavegarSqliteCmd { get; set; }
 
         public PaginaPrincipalPageViewModel(INavigationService navigationService)
         {
@@ -23,6 +24,12 @@ namespace AppSeminario.Views
             NavegarFotoCmd = new DelegateCommand(FotoEjecutar);
             NavegarWebCmd = new DelegateCommand(WebEjecutar);
             NavegarMapaCmd = new DelegateCommand(MapaEjecutar);
+            NavegarSqliteCmd = new DelegateCommand(SqliteEjecutar);
+        }
+
+        private async void SqliteEjecutar()
+        {
+            await _navigationService.NavigateAsync("PersonaPage");
         }
 
         private async void FotoEjecutar()

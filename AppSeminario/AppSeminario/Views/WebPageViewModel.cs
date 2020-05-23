@@ -18,9 +18,8 @@ namespace AppSeminario.Views
         private ServicioHttp _servicio;
 
         public DelegateCommand ObtenerImagenesCmd { get; set; }
-        public DelegateCommand ObtenerDatosCmd { get; set; }
 
-        public ObservableCollection<ProductoMS> Productos { get; set; }
+        public ObservableCollection<ImagenMS> Imagenes { get; set; }
 
         public string Imagen { get; set; }
 
@@ -29,32 +28,18 @@ namespace AppSeminario.Views
             _navigationService = navigationService;
             _servicio = new ServicioHttp();
 
-            ObtenerDatosCmd = new DelegateCommand(ObtenerDatosEjecutar);
             ObtenerImagenesCmd = new DelegateCommand(ObtenerImagenesEjecutar);
-            Productos = new ObservableCollection<ProductoMS>();
+            Imagenes = new ObservableCollection<ImagenMS>();
         }
 
         private async void ObtenerImagenesEjecutar()
         {
             var mensajeSalida = await _servicio.ObtenerImagenes();
-            
-            Imagen = mensajeSalida.FirstOrDefault().urls.regular;
-        }
 
-        private async void ObtenerDatosEjecutar()
-        {
-            var mensajeSalida = await _servicio.ObtenerDatos();
-
+            Imagenes.Clear();
             foreach (var item in mensajeSalida)
             {
-                ProductoMS producto = new ProductoMS()
-                {
-                    Nombre = item.Nombre,
-                    ProductoId = item.ProductoId,
-                    Servicio = item.Servicio
-                };
-
-                Productos.Add(producto);
+                Imagenes.Add(item);
             }
         }
 

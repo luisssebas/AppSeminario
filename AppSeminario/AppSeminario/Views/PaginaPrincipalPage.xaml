@@ -12,6 +12,7 @@
         <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" WidthRequest="200">
             <Button Text="Fotos y Videos" Command="{Binding NavegarFotoCmd}"/>
             <Button Text="Web Services" Command="{Binding NavegarWebCmd}"/>
+            <Button Text="Sqlite" Command="{Binding NavegarSqliteCmd}"/>
             <!--<Button Text="Geolocalización" Command="{Binding NavegarMapaCmd}"/>-->
         </StackLayout>
     </ContentPage.Content>

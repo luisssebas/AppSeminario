@@ -6,6 +6,8 @@ using Prism.Unity;
 using Prism.Ioc;
 using Prism;
 using Acr.UserDialogs;
+using AppSeminario.Interface;
+using AppSeminario.Models.Sqlite;
 
 namespace AppSeminario
 {
@@ -16,6 +18,8 @@ namespace AppSeminario
         protected override async void OnInitialized()
         {
             InitializeComponent();
+            CreateDB();
+
             await NavigationService.NavigateAsync("NavigationPage/PaginaPrincipalPage");
         }
 
@@ -24,11 +28,18 @@ namespace AppSeminario
             containerRegistry.RegisterInstance<IUserDialogs>(UserDialogs.Instance);
 
             containerRegistry.RegisterForNavigation<NavigationPage>();
-            
+
             containerRegistry.RegisterForNavigation<PaginaPrincipalPage, PaginaPrincipalPageViewModel>();
             containerRegistry.RegisterForNavigation<FotoPage, FotoPageViewModel>();
             containerRegistry.RegisterForNavigation<VideoPage, VideoPageViewModel>();
             containerRegistry.RegisterForNavigation<WebPage, WebPageViewModel>();
+            containerRegistry.RegisterForNavigation<PersonaPage, PersonaPageViewModel>();
+            containerRegistry.RegisterForNavigation<PersonaDataPage, PersonaDataPageViewModel>();
+        }
+        private void CreateDB()
+        {
+            var db = DependencyService.Get<ISQLite>().GetConnection();
+            db.CreateTable<Persona>();
         }
     }
 }
