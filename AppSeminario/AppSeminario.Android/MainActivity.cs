@@ -28,7 +28,9 @@ namespace AppSeminario.Droid
 
             UserDialogs.Init(() => this);
             CrossCurrentActivity.Current.Init(this, savedInstanceState);
+            Xamarin.FormsMaps.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+            Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             LoadApplication(new App(new AndroidInitializer()));
         }
 

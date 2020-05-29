@@ -35,6 +35,7 @@ namespace AppSeminario
             containerRegistry.RegisterForNavigation<WebPage, WebPageViewModel>();
             containerRegistry.RegisterForNavigation<PersonaPage, PersonaPageViewModel>();
             containerRegistry.RegisterForNavigation<PersonaDataPage, PersonaDataPageViewModel>();
+            containerRegistry.RegisterForNavigation<MapaPage, MapaPageViewModel>();
         }
         private void CreateDB()
         {

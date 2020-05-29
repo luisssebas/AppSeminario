@@ -10,7 +10,13 @@
 	<uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 	<uses-feature android:name="android.hardware.camera" />
 	<uses-feature android:name="android.hardware.camera.autofocus" />
+  <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+	<uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+	<uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" />
 	<application android:label="AppSeminario.Android" android:usesCleartextTraffic="true">
+    <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="YourApiKeyHere" />
+		<meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
     <provider android:name="android.support.v4.content.FileProvider" android:authorities="com.companyname.appseminario.fileprovider" android:exported="false" android:grantUriPermissions="true">
 			<meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/file_paths"></meta-data>
 		</provider>
